@@ -10,7 +10,9 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
-        return null;
+        String result = "";
+
+        return ;
     }
 
     /**
@@ -36,7 +38,12 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        return null;
+        for (int i = 0; i < string.length(); i++) {
+        char c = string.charAt(i);
+        if (Character.isUpperCase(c)) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -44,7 +51,12 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-        return null;
+
+        for (int i = 0; i < string.length(); i++) { char c = string.charAt(i);
+            if (Character.isDigit(c)) {
+                return true;
+                }
+                return false;
     }
 
     /**
@@ -52,6 +64,12 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        return null;
+        for (int i = 0; i < string.length(); i++) {
+            char c = string.charAt(i);
+            if (!Character.isDigit(c) && !Character.isLetter(c)){
+                        return true;
+                    }
+                    return false;
+        ;
     }
 }
