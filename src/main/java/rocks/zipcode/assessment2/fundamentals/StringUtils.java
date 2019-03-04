@@ -39,10 +39,11 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        if(string == string.toUpperCase()) {
-            return true;
-        } else {
-            return false; } }
+        for (int i = 0; i < string.length(); i++) {
+            char c = string.charAt(i);
+            if (!Character.isUpperCase(c)) {
+                return false;}}
+                return true;}
 
         /**
          * @param string - string to be evaluated
@@ -53,29 +54,37 @@ public class StringUtils {
                 if ("1234567890".contains(Character.valueOf(string.charAt(i)).toString())) {
                     continue;
                 } else {
-                    return false; } }
-                    return true; }
+                    return false;
+                }
+            }
+            return true;
+        }
 
-            /**
-             * @param string - string to be evaluated
-             * @return - true if string only contains special characters
-             */
-            public static Boolean isSpecialCharacterString (String string){
+        /**
+         * @param string - string to be evaluated
+         * @return - true if string only contains special characters
+         */
+        public static Boolean isSpecialCharacterString (String string){
 
-                    String specialCharacters = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~0123456789";
-                    String[] specialCharactersArray = new String[string.length()];
-                    for (int i = 0; i < string.length(); i++) {
-                        specialCharactersArray[i] = Character
-                                .toString(string.charAt(i)); }
+            String specialCharacters = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~0123456789";
+            String[] specialCharactersArray = new String[string.length()];
+            for (int i = 0; i < string.length(); i++) {
+                specialCharactersArray[i] = Character
+                        .toString(string.charAt(i));
+            }
 
-                    int count = 0;
-                    for (int i = 0; i <  specialCharactersArray.length; i++) {
-                        if (specialCharacters.contains( specialCharactersArray[i])) {
-                            count++; } }
-                    if (string != null && count == 0) {
-                        return true;
-                    } else {
-                        return false; } }
+            int count = 0;
+            for (int i = 0; i < specialCharactersArray.length; i++) {
+                if (specialCharacters.contains(specialCharactersArray[i])) {
+                    count++;
+                }
+            }
+            if (string != null && count == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
 
 
 
