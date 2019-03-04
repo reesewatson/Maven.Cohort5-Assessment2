@@ -51,9 +51,9 @@ public class IntegerArrayUtils {
                 return null;
             }
             if (integerArray[i] % 2 == 0) {
-                integerArray[i]++; }
+                newArray[i] = integerArray[i]++; }
                 else {
-                integerArray[i]--; }}
+                newArray[i] = integerArray[i]--; }}
                 return newArray; }
 
     /**
@@ -61,22 +61,22 @@ public class IntegerArrayUtils {
      * @return identical array with even-values incremented by 1
      */
     public static Integer[] incrementEven(Integer[] integerArray) {
-        Integer[] incrementEvens = new Integer[integerArray.length];
+        Integer[] evens = new Integer[integerArray.length];
 
         for (int i = 0; i < integerArray.length; i++) {
             if (integerArray[i] % 2 == 0) {
-                integerArray[i]++;}}
-                return incrementEvens; }
+                evens[i] = integerArray[i]++;}}
+                return evens; }
 
     /**
      * @param input - array to be evaluated
      * @return identical array with odd-values decremented by 1
      */
     public static Integer[] decrementOdd(Integer[] input) {
-        Integer[] decrementOdds = new Integer[input.length];
+        Integer[] odds = new Integer[input.length];
 
         for (int i = 0; i < input.length; i++) {
             if (input[i] % 2 != 0) {
-                input[i]--; } }
-        return decrementOdds; }
+                odds[i] = input[i]--; } }
+        return odds; }
 }
