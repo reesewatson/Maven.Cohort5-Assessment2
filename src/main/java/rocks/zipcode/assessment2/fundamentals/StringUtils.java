@@ -73,9 +73,7 @@ public class StringUtils {
      * @param string - string to be evaluated
      * @return - true if string only contains special characters
      */
-    private static final String SPECIAL_CHARS_REGEX_PATTERN = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~0123456789";
-
-    public static boolean isSpecialCharacterString(String string) {
+     public static boolean isSpecialCharacterString(String string) {
         String specialCharacters = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~0123456789";
         String[] specialCharactersArray = new String[string.length()];
         for (int i = 0; i < string.length(); i++) {
