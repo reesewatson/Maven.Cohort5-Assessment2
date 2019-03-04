@@ -18,7 +18,7 @@ public class StringArrayUtils {
             String[] newArray = new String[newLength];
             int spliceIndex = 0;
 
-            for (int i = 0; i < arrayToBeSpliced.length; i++) {
+            for (int i = startingIndex; i < arrayToBeSpliced.length; i++) {
                 newArray[spliceIndex] = arrayToBeSpliced[i];
                 spliceIndex++;}
             return newArray;
@@ -32,14 +32,11 @@ public class StringArrayUtils {
      */
     public static String[] getEndingArray(String[] arrayToBeSpliced, int startingIndex) {
 
-        public static Integer[] rotate(Integer[] array, Integer index) {
-            String[] newArray = new Integer [array.length];
-            int rotatedIndex = 0;
-            //copy from the index to the end of the array.
-            for (int i = 0; i < index; i++) {
-                rotated[rotatedIndex] = array[i];
-                rotatedIndex++;}
-            return rotated;
+            String[] newArray = new String[arrayToBeSpliced.length - startingIndex];
+            int splicedIndex = 0;
+            for (int i = startingIndex; i < arrayToBeSpliced.length; i++) {
+                newArray[splicedIndex] = arrayToBeSpliced[i];
+                splicedIndex++;}
+            return newArray;
         }
-    }
 }
