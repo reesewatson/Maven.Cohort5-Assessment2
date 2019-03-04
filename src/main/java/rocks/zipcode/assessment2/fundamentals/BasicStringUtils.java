@@ -2,7 +2,7 @@ package rocks.zipcode.assessment2.fundamentals;
 
 import java.lang.Object;
 import java.lang.Character;
-import java.util.Strings;
+import java.lang.String;
 
 
 public class BasicStringUtils {
@@ -23,7 +23,7 @@ public class BasicStringUtils {
     public static String reverse(String string1) {
 
         String reverse = "";
-        for (int i = string1.length() - 1; i--) {
+        for (int i = string1.length() - 1; i > 0; i--) {
             reverse = reverse + i;}
             return reverse;
     }
@@ -44,13 +44,13 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-            String newValue = "";
-            for (int i = 0; i < string.length(); i++) {
-                if (!string.charAt(i) == charactersToRemove) {
-                    newValue += string.charAt(i);
-                }
-            }
-            return newValue;
+//            String newValue = "";
+//            for (int i = 0; i < string.length(); i++) {
+//                if (!string.charAt(i) == charactersToRemove) {
+//                    newValue += string.charAt(i);
+//                }
+//            }
+            return string.replace(charactersToRemove, "");
     }
 
 
@@ -61,12 +61,13 @@ public class BasicStringUtils {
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
 
-        String newValue = "";
-        for (int i = 0; i < string.length(); i++) {
-            if (string.charAt(i) != charactersToRemove) {
-                newValue += string.charAt(i);
-            }
-        }
+//        String newValue = "";
+//        for (int i = 0; i < string.length(); i++) {
+//            if (string.charAt(i) != charactersToRemove) {
+//                newValue += string.charAt(i);
+//            }
+//        }
+        String newValue = string.replace(charactersToRemove, "");
         return reverse(newValue);
     }
 }
