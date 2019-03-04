@@ -1,7 +1,6 @@
 package rocks.zipcode.assessment2.arrays;
 import java.util.Arrays;
 
-package rocks.zipcode.assessment2.arrays;
 
 /**
  * @author leon on 28/11/2018.

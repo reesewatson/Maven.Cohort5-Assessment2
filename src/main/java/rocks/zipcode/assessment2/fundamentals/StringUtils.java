@@ -1,4 +1,7 @@
 package rocks.zipcode.assessment2.fundamentals;
+import java.lang.Object;
+import java.lang.Character;
+import java.lang.String;
 
 /**
  * @author leon on 28/11/2018.
@@ -10,10 +13,7 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
-        String result = "";
-
-        return ;
-    }
+        return String.format("%1$#" + amountOfPadding + "s", stringToBePadded); }
 
     /**
      * @param stringToBePadded - string value to be flushed left
@@ -21,8 +21,7 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by right-padding
      */
     public static String padRight(String stringToBePadded, int amountOfPadding) {
-        return null;
-    }
+        return String.format("%1$-" + amountOfPadding + "s", stringToBePadded); }
 
     /**
      * @param stringToBeRepeated - string value to be repeated
@@ -30,46 +29,54 @@ public class StringUtils {
      * @return the string repeated and concatenated `n` times
      */
     public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
-        return null;
-    }
+        StringBuilder repeat = new StringBuilder();
+        for (int i = 0; i < numberOfTimeToRepeat; i++) {
+            repeat.append(stringToBeRepeated); }
+        return repeat.toString(); }
 
     /**
      * @param string - string to be evaluated
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        for (int i = 0; i < string.length(); i++) {
-        char c = string.charAt(i);
-        if (Character.isUpperCase(c)) {
+        if(string == string.toUpperCase()) {
             return true;
-        }
-        return false;
-    }
+        } else {
+            return false; } }
 
-    /**
-     * @param string - string to be evaluated
-     * @return - true if string only contains numeric characters
-     */
-    public static Boolean isNumericString(String string) {
+        /**
+         * @param string - string to be evaluated
+         * @return - true if string only contains numeric characters
+         */
+        public static Boolean isNumericString (String string){
+            for (int i = 0; i < string.length(); i++) {
+                if ("1234567890".contains(Character.valueOf(string.charAt(i)).toString())) {
+                    continue;
+                } else {
+                    return false; } }
+                    return true; }
 
-        for (int i = 0; i < string.length(); i++) { char c = string.charAt(i);
-            if (Character.isDigit(c)) {
-                return true;
-                }
-                return false;
-    }
+            /**
+             * @param string - string to be evaluated
+             * @return - true if string only contains special characters
+             */
+            public static Boolean isSpecialCharacterString (String string){
 
-    /**
-     * @param string - string to be evaluated
-     * @return - true if string only contains special characters
-     */
-    public static Boolean isSpecialCharacterString(String string) {
-        for (int i = 0; i < string.length(); i++) {
-            char c = string.charAt(i);
-            if (!Character.isDigit(c) && !Character.isLetter(c)){
+                    String specialCharacters = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~0123456789";
+                    String[] specialCharactersArray = new String[string.length()];
+                    for (int i = 0; i < string.length(); i++) {
+                        specialCharactersArray[i] = Character
+                                .toString(string.charAt(i)); }
+
+                    int count = 0;
+                    for (int i = 0; i <  specialCharactersArray.length; i++) {
+                        if (specialCharacters.contains( specialCharactersArray[i])) {
+                            count++; } }
+                    if (string != null && count == 0) {
                         return true;
-                    }
-                    return false;
-        ;
-    }
+                    } else {
+                        return false; } }
+
+
+
 }

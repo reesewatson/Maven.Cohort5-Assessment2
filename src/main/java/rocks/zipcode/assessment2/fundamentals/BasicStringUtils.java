@@ -12,21 +12,17 @@ public class BasicStringUtils {
      * @return concatenation of `string1` and `string2`
      */
     public static String concatentate(String string1, String string2) {
-
-        return string1.concat(string2);
-    }
+        return string1.concat(string2); }
 
     /**
      * @param string1 - String to be reversed
      * @return an identical string with characters in reverse order
      */
     public static String reverse(String string1) {
-
         String reverse = "";
         for (int i = string1.length() - 1; i > 0; i--) {
             reverse = reverse + i;}
-            return reverse;
-    }
+            return reverse; }
 
     /**
      * @param string1 - first string to be reversed
@@ -35,8 +31,7 @@ public class BasicStringUtils {
      */
     public static String reverseThenConcatenate(String string1, String string2) {
         String result = reverse(string1) + reverse(string2);
-        return result;
-    }
+        return result; }
 
     /**
      * @param string - the string to be manipulated
@@ -44,14 +39,7 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-//            String newValue = "";
-//            for (int i = 0; i < string.length(); i++) {
-//                if (!string.charAt(i) == charactersToRemove) {
-//                    newValue += string.charAt(i);
-//                }
-//            }
-            return string.replace(charactersToRemove, "");
-    }
+            return string.replace(charactersToRemove, ""); }
 
 
     /**
@@ -60,14 +48,6 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-
-//        String newValue = "";
-//        for (int i = 0; i < string.length(); i++) {
-//            if (string.charAt(i) != charactersToRemove) {
-//                newValue += string.charAt(i);
-//            }
-//        }
         String newValue = string.replace(charactersToRemove, "");
-        return reverse(newValue);
-    }
+        return reverse(newValue); }
 }

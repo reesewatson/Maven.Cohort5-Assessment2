@@ -13,8 +13,7 @@ public class IntegerArrayUtils {
 
         Integer[] newArray = Arrays.copyOf(integerArray, integerArray.length + 1);
         newArray[newArray.length - 1] = valueToBeAdded;
-        return newArray;
-    }
+        return newArray; }
 
     /**
      * @param integerArray      - array to be manipulated
@@ -25,8 +24,7 @@ public class IntegerArrayUtils {
     public static Integer[] replace(Integer[] integerArray, int indexToInsertAt, Integer valueToBeInserted) {
 
         integerArray[indexToInsertAt] = valueToBeInserted;
-        return integerArray;
-    }
+        return integerArray; }
 
     /**
      * @param integerArray - array to be evaluated
@@ -35,31 +33,24 @@ public class IntegerArrayUtils {
      */
     public static Integer get(Integer[] integerArray, Integer indexToFetch) {
 
-        return integerArray[indexToFetch];
-    }
+        return integerArray[indexToFetch]; }
 
     /**
      * @param integerArray - array to be evaluated
      * @return identical array with even-values incremented by 1 and odd-values decremented by 1
      */
     public static Integer[] incrementEvenDecrementOdd(Integer[] integerArray) {
-
         Integer[] newArray = new Integer[integerArray.length];
 
         for (int i = 0; i < integerArray.length; i++) {
             if (integerArray[i] % 2 == 0) {
                 newArray[i] = integerArray[i] = i + 1;
-                i++;
-            }
+                i++; }
             for (int j = 0; j < integerArray.length; j++) {
                 if (integerArray[j] % 2 != 0) {
                     newArray[j] = integerArray[j] = j - 1;
-                    j++;
-                }
-            }
-        }
-        return newArray;
-    }
+                    j++; } } }
+        return newArray; }
 
     /**
      * @param integerArray - array to be evaluated
@@ -72,11 +63,8 @@ public class IntegerArrayUtils {
         for (int i = 0; i < integerArray.length; i++) {
             if (integerArray[i] % 2 == 0) {
                 incrementEvens[i] = i + 1;
-                i++;
-            }
-        }
-        return incrementEvens;
-    }
+                i++; } }
+        return incrementEvens; }
 
     /**
      * @param input - array to be evaluated
@@ -89,9 +77,6 @@ public class IntegerArrayUtils {
         for (int i = 0; i < input.length; i++) {
             if (input[i] % 2 == 0) {
                 decrementOdds[i] = i - 1;
-                i++;
-            }
-        }
-        return decrementOdds;
-    }
+                i++; } }
+        return decrementOdds; }
 }
