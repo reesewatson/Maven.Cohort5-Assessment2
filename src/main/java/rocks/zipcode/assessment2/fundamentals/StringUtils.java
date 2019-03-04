@@ -1,7 +1,8 @@
 package rocks.zipcode.assessment2.fundamentals;
-import java.lang.Object;
 import java.lang.Character;
 import java.lang.String;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author leon on 28/11/2018.
@@ -9,30 +10,34 @@ import java.lang.String;
 public class StringUtils {
     /**
      * @param stringToBePadded - string value to be flushed right
-     * @param amountOfPadding - amount of padding to be flushed left
+     * @param amountOfPadding  - amount of padding to be flushed left
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
-        return String.format("%" + amountOfPadding + "s", stringToBePadded);  }
+        return String.format("%" + amountOfPadding + "s", stringToBePadded);
+    }
 
     /**
      * @param stringToBePadded - string value to be flushed left
-     * @param amountOfPadding - amount of padding to be flushed right
+     * @param amountOfPadding  - amount of padding to be flushed right
      * @return `stringToBePadded` flushed right by right-padding
      */
     public static String padRight(String stringToBePadded, int amountOfPadding) {
-        return String.format("%1$-" + amountOfPadding + "s", stringToBePadded); }
+        return String.format("%1$-" + amountOfPadding + "s", stringToBePadded);
+    }
 
     /**
-     * @param stringToBeRepeated - string value to be repeated
+     * @param stringToBeRepeated   - string value to be repeated
      * @param numberOfTimeToRepeat - number of times to repeat `stringToBeRepeated`
      * @return the string repeated and concatenated `n` times
      */
     public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
         StringBuilder repeat = new StringBuilder();
         for (int i = 0; i < numberOfTimeToRepeat; i++) {
-            repeat.append(stringToBeRepeated); }
-        return repeat.toString(); }
+            repeat.append(stringToBeRepeated);
+        }
+        return repeat.toString();
+    }
 
     /**
      * @param string - string to be evaluated
@@ -41,51 +46,57 @@ public class StringUtils {
     public static Boolean isAlphaString(String string) {
         for (int i = 0; i < string.length(); i++) {
             char c = string.charAt(i);
-            if (!Character.isUpperCase(c)) {
-                return false;}}
-                return true;}
-
-        /**
-         * @param string - string to be evaluated
-         * @return - true if string only contains numeric characters
-         */
-        public static Boolean isNumericString (String string){
-            for (int i = 0; i < string.length(); i++) {
-                if ("1234567890".contains(Character.valueOf(string.charAt(i)).toString())) {
-                    continue;
-                } else {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        /**
-         * @param string - string to be evaluated
-         * @return - true if string only contains special characters
-         */
-        public static Boolean isSpecialCharacterString (String string){
-
-            String specialCharacters = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~0123456789";
-            String[] specialCharactersArray = new String[string.length()];
-            for (int i = 0; i < string.length(); i++) {
-                specialCharactersArray[i] = Character
-                        .toString(string.charAt(i));
-            }
-
-            int count = 0;
-            for (int i = 0; i < specialCharactersArray.length; i++) {
-                if (specialCharacters.contains(specialCharactersArray[i])) {
-                    count++;
-                }
-            }
-            if (string != null && count == 0) {
+            c++;
+            if (Character.isLowerCase(c)) {
                 return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * @param string - string to be evaluated
+     * @return - true if string only contains numeric characters
+     */
+    public static Boolean isNumericString(String string) {
+        for (int i = 0; i < string.length(); i++) {
+            if ("1234567890".contains(Character.valueOf(string.charAt(i)).toString())) {
+                continue;
             } else {
                 return false;
             }
         }
+        return true;
+    }
 
+    /**
+     * @param string - string to be evaluated
+     * @return - true if string only contains special characters
+     */
+    private static final String SPECIAL_CHARS_REGEX_PATTERN = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~0123456789";
 
+    public static boolean isSpecialCharacterString(String string) {
+        String specialCharacters = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~0123456789";
+        String[] specialCharactersArray = new String[string.length()];
+        for (int i = 0; i < string.length(); i++) {
+            specialCharactersArray[i] = Character
+                    .toString(string.charAt(i));
+        }
 
+        int count = 0;
+        for (int i = 0; i < specialCharactersArray.length; i++) {
+            if (specialCharacters.contains(specialCharactersArray[i])) {
+                count++;
+            }
+        }
+        if (string != null && count == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
+
+
+
+
