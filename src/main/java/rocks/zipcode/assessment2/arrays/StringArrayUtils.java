@@ -1,3 +1,5 @@
+package rocks.zipcode.assessment2.arrays;
+
 import java.util.Arrays;
 
 package rocks.zipcode.assessment2.arrays;
@@ -14,14 +16,17 @@ public class StringArrayUtils {
      */
     public static String[] getSubArray(String[] arrayToBeSpliced, int startingIndex, int endingIndex) {
 
-            int newLength = Math.abs(startingIndex - endingIndex);
-            String[] newArray = new String[newLength];
-            int spliceIndex = 0;
+        String[] spliced = Arrays.copyOfRange(arrayToBeSpliced,startingIndex,endingIndex);
+        return spliced;
 
-            for (int i = startingIndex; i < arrayToBeSpliced.length; i++) {
-                newArray[spliceIndex] = arrayToBeSpliced[i];
-                spliceIndex++;}
-            return newArray;
+//        int newLength = Math.abs(startingIndex - endingIndex);
+//            String[] newArray = new String[newLength];
+//            int spliceIndex = 0;
+//
+//            for (int i = startingIndex; i < arrayToBeSpliced.length; i++) {
+//                newArray[spliceIndex] = arrayToBeSpliced[i];
+//                spliceIndex++;}
+//            return newArray;
     }
 
 
