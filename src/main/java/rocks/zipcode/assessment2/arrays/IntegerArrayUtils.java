@@ -5,7 +5,7 @@ import java.util.Arrays;
  */
 public class IntegerArrayUtils {
     /**
-     * @param integerArray - array to have value added to it
+     * @param integerArray   - array to have value added to it
      * @param valueToBeAdded - value to be added to the end of the array
      * @return - identical array with one additional element of `valueToBeAdded` at the end of the array
      */
@@ -17,8 +17,8 @@ public class IntegerArrayUtils {
     }
 
     /**
-     * @param integerArray - array to be manipulated
-     * @param indexToInsertAt - index of the element to be inserted at
+     * @param integerArray      - array to be manipulated
+     * @param indexToInsertAt   - index of the element to be inserted at
      * @param valueToBeInserted - value of the element to be inserted
      * @return `integerArray` with `valueToBeInserted` at index number `indexToInsertAt`
      */
@@ -46,7 +46,19 @@ public class IntegerArrayUtils {
 
         Integer[] newArray = new Integer[integerArray.length];
 
-        return null;
+        for (int i = 0; i < integerArray.length; i++) {
+            if (integerArray[i] % 2 == 0) {
+                newArray[i] = integerArray[i] = i + 1;
+                i++;
+            }
+            for (int j = 0; j < integerArray.length; j++) {
+                if (integerArray[j] % 2 != 0) {
+                    newArray[j] = integerArray[j] = j - 1;
+                    j++;
+                }
+            }
+        }
+        return newArray;
     }
 
     /**
@@ -54,7 +66,16 @@ public class IntegerArrayUtils {
      * @return identical array with even-values incremented by 1
      */
     public static Integer[] incrementEven(Integer[] integerArray) {
-        return null;
+        Integer[] incrementEvens = new Integer[integerArray.length];
+        int index = 0;
+
+        for (int i = 0; i < integerArray.length; i++) {
+            if (integerArray[i] % 2 == 0) {
+                incrementEvens[i] = i + 1;
+                i++;
+            }
+        }
+        return incrementEvens;
     }
 
     /**
@@ -62,6 +83,15 @@ public class IntegerArrayUtils {
      * @return identical array with odd-values decremented by 1
      */
     public static Integer[] decrementOdd(Integer[] input) {
-        return null;
+        Integer[] decrementOdds = new Integer[input.length];
+        int index = 0;
+
+        for (int i = 0; i < input.length; i++) {
+            if (input[i] % 2 == 0) {
+                decrementOdds[i] = i - 1;
+                i++;
+            }
+        }
+        return decrementOdds;
     }
 }
