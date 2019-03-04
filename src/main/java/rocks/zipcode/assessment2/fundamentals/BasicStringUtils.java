@@ -21,12 +21,8 @@ public class BasicStringUtils {
     public static String reverse(String string1) {
         String reversed = "";
         for (int i = string1.length() - 1; i >= 0; i--) {
-            reversed += string1.charAt(i);
-            {
-            }
-        }
-        return reversed;
-    }
+            reversed += string1.charAt(i); }
+        return reversed; }
 
     /**
      * @param string1 - first string to be reversed
@@ -42,8 +38,20 @@ public class BasicStringUtils {
      * @param charactersToRemove - Characters that should be removed from `string`
      * @return `string` with `charactersToRemove` removed
      */
-    public static String removeCharacters(String string, String charactersToRemove) {
-            return string.replace(charactersToRemove, ""); }
+    public static String removeCharacters(String string, String charactersToRemove) { return null;}
+//        String result = string.replace(charactersToRemove,"");
+//        return result;}
+
+//        StringBuffer newString = new StringBuffer(string);
+//        text.replace( StartIndex,EndIndex ,String);
+
+//        return string.substring(String newValue = "";
+//            for (int i = 0; i < string.length(); i++){
+//                char c = string[i];
+//                if (!string.charAt(i).equals(charactersToRemove)) {
+//
+//                    newValue += string.charAt(i); }
+//            return newValue;}
 
 
     /**

@@ -1,5 +1,9 @@
 package rocks.zipcode.assessment2.arrays;
 import java.util.Arrays;
+import java.lang.Integer;
+import java.lang.Math;
+
+
 /**
  * @author leon on 28/11/2018.
  */
@@ -47,16 +51,10 @@ public class IntegerArrayUtils {
                 return null;
             }
             if (integerArray[i] % 2 == 0) {
-                newArray[i] = integerArray[i] + 1;
-                i++; }
-            for (int j = 0; j < integerArray.length; j++) {
-                if (integerArray[j] == null) {
-                    return null;
-                }
-                if (integerArray[j] % 2 != 0) {
-                    newArray[j] = integerArray[j] + 1;
-                    j++; } } }
-        return newArray; }
+                integerArray[i]++; }
+                else {
+                integerArray[i]--; }}
+                return newArray; }
 
     /**
      * @param integerArray - array to be evaluated
@@ -64,15 +62,11 @@ public class IntegerArrayUtils {
      */
     public static Integer[] incrementEven(Integer[] integerArray) {
         Integer[] incrementEvens = new Integer[integerArray.length];
-        int index = 0;
 
         for (int i = 0; i < integerArray.length; i++) {
-            if (integerArray[i] == null) {
-                return null; }
             if (integerArray[i] % 2 == 0) {
-                incrementEvens[i] = incrementEvens[i] + 1;
-                i++; } }
-        return incrementEvens; }
+                integerArray[i]++;}}
+                return incrementEvens; }
 
     /**
      * @param input - array to be evaluated
@@ -80,13 +74,9 @@ public class IntegerArrayUtils {
      */
     public static Integer[] decrementOdd(Integer[] input) {
         Integer[] decrementOdds = new Integer[input.length];
-        int index = 0;
 
         for (int i = 0; i < input.length; i++) {
-            if (input[i] == null) {
-                return null; }
-            if (input[i] % 2 == 0) {
-                decrementOdds[i] = decrementOdds[i] - 1;
-                i++; } }
+            if (input[i] % 2 != 0) {
+                input[i]--; } }
         return decrementOdds; }
 }

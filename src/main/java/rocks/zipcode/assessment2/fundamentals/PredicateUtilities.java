@@ -9,7 +9,7 @@ public class PredicateUtilities {
      * @return true if `value` is a multiple of 2
      */
     public static Boolean isEven(Integer value) {
-        return value % 2 ==0; }
+        return value % 2 == 0; }
 
     /**
      * @param value - the value to be evaluated
