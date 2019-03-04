@@ -43,12 +43,18 @@ public class IntegerArrayUtils {
         Integer[] newArray = new Integer[integerArray.length];
 
         for (int i = 0; i < integerArray.length; i++) {
+            if (integerArray[i] == null) {
+                return null;
+            }
             if (integerArray[i] % 2 == 0) {
-                newArray[i] = integerArray[i] = i + 1;
+                newArray[i] = integerArray[i] + 1;
                 i++; }
             for (int j = 0; j < integerArray.length; j++) {
+                if (integerArray[j] == null) {
+                    return null;
+                }
                 if (integerArray[j] % 2 != 0) {
-                    newArray[j] = integerArray[j] = j - 1;
+                    newArray[j] = integerArray[j] + 1;
                     j++; } } }
         return newArray; }
 
@@ -61,8 +67,10 @@ public class IntegerArrayUtils {
         int index = 0;
 
         for (int i = 0; i < integerArray.length; i++) {
+            if (integerArray[i] == null) {
+                return null; }
             if (integerArray[i] % 2 == 0) {
-                incrementEvens[i] = i + 1;
+                incrementEvens[i] = incrementEvens[i] + 1;
                 i++; } }
         return incrementEvens; }
 
@@ -75,8 +83,10 @@ public class IntegerArrayUtils {
         int index = 0;
 
         for (int i = 0; i < input.length; i++) {
+            if (input[i] == null) {
+                return null; }
             if (input[i] % 2 == 0) {
-                decrementOdds[i] = i - 1;
+                decrementOdds[i] = decrementOdds[i] - 1;
                 i++; } }
         return decrementOdds; }
 }

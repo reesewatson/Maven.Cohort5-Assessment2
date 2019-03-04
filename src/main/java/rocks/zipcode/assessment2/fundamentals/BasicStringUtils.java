@@ -19,10 +19,14 @@ public class BasicStringUtils {
      * @return an identical string with characters in reverse order
      */
     public static String reverse(String string1) {
-        String reverse = "";
-        for (int i = string1.length() - 1; i > 0; i--) {
-            reverse = reverse + i;}
-            return reverse; }
+        String reversed = "";
+        for (int i = string1.length() - 1; i >= 0; i--) {
+            reversed += string1.charAt(i);
+            {
+            }
+        }
+        return reversed;
+    }
 
     /**
      * @param string1 - first string to be reversed
