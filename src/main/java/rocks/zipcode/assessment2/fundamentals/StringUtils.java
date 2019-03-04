@@ -13,7 +13,7 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
-        return String.format("%1$+" + amountOfPadding + "s", stringToBePadded); }
+        return String.format("%" + amountOfPadding + "s", stringToBePadded);  }
 
     /**
      * @param stringToBePadded - string value to be flushed left
