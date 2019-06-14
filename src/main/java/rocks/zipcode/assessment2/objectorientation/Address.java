@@ -5,13 +5,18 @@ package rocks.zipcode.assessment2.objectorientation;
  */
 public class Address {
 
-    private String addressLine1;
-    private String addressLine2;
-    private String city;
-    private String state;
-    private String zipcode;
+    private String addressLine1 = "";
+    private String addressLine2 = "";
+    private String city = "";
+    private String state = "";
+    private String zipcode = "";
 
     public Address() {
+        this.addressLine1 = addressLine1;
+        this.addressLine2 = addressLine2;
+        this.city = city;
+        this.state = state;
+        this.zipcode = zipcode;
     }
 
     /**
@@ -22,11 +27,12 @@ public class Address {
      * @param zipcode - zipcode of region
      */
     public Address(String addressLine1, String addressLine2, String city, String state, String zipcode) {
-    this.addressLine1 = addressLine1;
-    this.addressLine2 = addressLine2;
-    this.city = city;
-    this.state = state;
-    this.zipcode = zipcode;
+
+        this.addressLine1 = addressLine1;
+        this.addressLine2 = addressLine2;
+        this.city = city;
+        this.state = state;
+        this.zipcode = zipcode;
     }
 
     public String getAddressLine1() {
@@ -71,6 +77,34 @@ public class Address {
 
     @Override
     public boolean equals(Object o) {
+        //Cast the object o to an Address.
+        //Determine if each field is equal to that in the object.
+        if(!this.addressLine1.equals(((Address) o).addressLine1)) {
+            return false; }
+
+        if (!this.addressLine2.equals(((Address) o).addressLine2)) {
+            return false; }
+
+        if (!this.city.equals(((Address) o).city)) {
+            return false; }
+
+        if (!this.state.equals(((Address) o).state)) {
+            return false; }
+
+        if (!this.zipcode.equals(((Address) o).zipcode)) {
+            return false; }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "addressLine1='" + addressLine1 + '\'' +
+                ", addressLine2='" + addressLine2 + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zipcode='" + zipcode + '\'' +
+                '}';
+    }
+
 }

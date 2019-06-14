@@ -1,6 +1,9 @@
 package rocks.zipcode.assessment2.fundamentals;
 import java.lang.Character;
 import java.lang.String;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -44,14 +47,11 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        for (int i = 0; i < string.length(); i++) {
-            char c = string.charAt(i);
-            c++;
-            if (Character.isLowerCase(c)) {
-                return true;
-            }
-        }
-        return false;
+        char[] chars = string.toCharArray();
+        for (char c : chars) {
+            if (Character.isAlphabetic(c) && (!Character.toString(c).equals(" "))) {
+            } return true;
+        } return false;
     }
 
     /**
@@ -62,11 +62,9 @@ public class StringUtils {
         for (int i = 0; i < string.length(); i++) {
             if ("1234567890".contains(Character.valueOf(string.charAt(i)).toString())) {
                 continue;
-            } else {
-                return false;
+            } else { return false;
             }
-        }
-        return true;
+        } return true;
     }
 
     /**
@@ -74,24 +72,12 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
      public static boolean isSpecialCharacterString(String string) {
-        String specialCharacters = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~0123456789";
-        String[] specialCharactersArray = new String[string.length()];
-        for (int i = 0; i < string.length(); i++) {
-            specialCharactersArray[i] = Character
-                    .toString(string.charAt(i));
-        }
-
-        int count = 0;
-        for (int i = 0; i < specialCharactersArray.length; i++) {
-            if (specialCharacters.contains(specialCharactersArray[i])) {
-                count++;
-            }
-        }
-        if (string != null && count == 0) {
-            return true;
-        } else {
-            return false;
-        }
+         char[] chars = string.toCharArray();
+         for (char c : chars) {
+             if (isAlphaString(string) || isNumericString(string) || Character.isAlphabetic(c) || Character.isDigit(c)) {
+                 return false;
+             }
+         }return true;
     }
 }
 

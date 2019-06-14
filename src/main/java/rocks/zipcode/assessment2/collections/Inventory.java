@@ -30,6 +30,7 @@ public class Inventory {
      */
     public void addItemToInventory(String item) {
 
+        list.add(item);
 
     }
 
@@ -37,7 +38,9 @@ public class Inventory {
      * @param item - decrement the number of this item in stock by 1
      */
     public void removeItemFromInventory(String item) {
-        return;
+        if (list.contains(item)) {
+            list.remove(item);
+        }
     }
 
     /**
@@ -45,6 +48,11 @@ public class Inventory {
      * @return - return the number of items
      */
     public Integer getItemQuantity(String item) {
-        return null;
+        int count = 0;
+        for (String i : list) {
+            if (i.equals(item)) {
+                count++;
+            }
+        } return count;
     }
 }

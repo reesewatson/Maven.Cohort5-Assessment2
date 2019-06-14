@@ -3,6 +3,7 @@ package rocks.zipcode.assessment2.fundamentals;
 import java.lang.Object;
 import java.lang.Character;
 import java.lang.String;
+import java.util.*;
 
 
 public class BasicStringUtils {
@@ -12,7 +13,9 @@ public class BasicStringUtils {
      * @return concatenation of `string1` and `string2`
      */
     public static String concatentate(String string1, String string2) {
-        return string1.concat(string2); }
+
+        return string1.concat(string2);
+    }
 
     /**
      * @param string1 - String to be reversed
@@ -21,8 +24,10 @@ public class BasicStringUtils {
     public static String reverse(String string1) {
         String reversed = "";
         for (int i = string1.length() - 1; i >= 0; i--) {
-            reversed += string1.charAt(i); }
-        return reversed; }
+            reversed += string1.charAt(i);
+        }
+        return reversed;
+    }
 
     /**
      * @param string1 - first string to be reversed
@@ -31,14 +36,23 @@ public class BasicStringUtils {
      */
     public static String reverseThenConcatenate(String string1, String string2) {
         String result = reverse(string1) + reverse(string2);
-        return result; }
+        return result;
+    }
 
     /**
-     * @param string - the string to be manipulated
+     * @param string             - the string to be manipulated
      * @param charactersToRemove - Characters that should be removed from `string`
      * @return `string` with `charactersToRemove` removed
      */
-    public static String removeCharacters(String string, String charactersToRemove) { return null;}
+    public static String removeCharacters(String string, String charactersToRemove) {
+        List<String> originalStringAsList = new ArrayList(Arrays.asList(string.split("")));
+        List<String> charactersToRemoveAsList = new ArrayList(Arrays.asList(charactersToRemove.split("")));
+        originalStringAsList.removeAll(charactersToRemoveAsList);
+                    return originalStringAsList.toString().replaceAll(" ","").replaceAll("\\[", "").replaceAll("]", "").replaceAll(",","");
+
+
+        }
+
 //        String result = string.replace(charactersToRemove,"");
 //        return result;}
 
@@ -60,6 +74,6 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        String newValue = string.replace(charactersToRemove, "");
-        return reverse(newValue); }
+        return reverse(removeCharacters(string, charactersToRemove));
+    }
 }
