@@ -47,11 +47,7 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        char[] chars = string.toCharArray();
-        for (char c : chars) {
-            if (Character.isAlphabetic(c) && (!Character.toString(c).equals(" "))) {
-            } return true;
-        } return false;
+        return Pattern.matches("[a-zA-Z]+", string.replace(" ", ""));
     }
 
     /**

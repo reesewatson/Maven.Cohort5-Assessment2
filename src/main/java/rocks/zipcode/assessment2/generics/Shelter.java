@@ -16,8 +16,7 @@ import java.util.function.Consumer;
  * Shelter<Person> farmHouse = new Shelter<Person>();
  * Shelter<Dog> dogHouse = new Shelter<Dog>();
  */
-public class Shelter<T> implements Iterable {
-
+public class Shelter<Object extends Ageable> implements Iterable<Ageable> {
     private List<Ageable> shelter;
 
     public Shelter() {
@@ -32,7 +31,7 @@ public class Shelter<T> implements Iterable {
     }
 
     public void add(Object object) {
-        //shelter.add(object);
+        shelter.add(object);
     }
 
     public Boolean contains(Object object) {
@@ -48,12 +47,14 @@ public class Shelter<T> implements Iterable {
     }
 
     public Integer getIndexOf(Object ageable) {
-        return getIndexOf(ageable);
+
+        return shelter.indexOf(ageable);
     }
 
     @Override
     public Iterator iterator() {
-        return null;
+
+        return shelter.iterator();
     }
 
     @Override

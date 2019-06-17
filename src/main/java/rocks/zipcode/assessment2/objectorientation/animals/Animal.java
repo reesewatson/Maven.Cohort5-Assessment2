@@ -11,18 +11,16 @@ public class Animal {
 
     protected Long id;
     protected Person owner;
-    protected Address address;
+
 
     public Animal() {
-        this.id = null;
-        this.owner = new Person();
-        this.address = owner.getAddress();
     }
 
     /**
      * @param id - id of animal
      * @param owner - owner of animal
      */
+
     public Animal(Long id, Person owner) {
         this.id = id;
         this.owner = owner;

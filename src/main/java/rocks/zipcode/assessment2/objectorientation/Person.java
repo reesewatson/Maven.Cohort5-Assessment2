@@ -5,8 +5,8 @@ package rocks.zipcode.assessment2.objectorientation;
  * @ATTENTION_TO_STUDENTS - Ensure that you have completed the `Address` class before attempting this class
  */
 public class Person {
-    protected Long id = Long.MIN_VALUE;
-    protected String name = "";
+    protected Long id;
+    protected String name;
     protected Address address;
 
     /**
@@ -21,6 +21,9 @@ public class Person {
     }
 
     public Person() {
+        this.id = Long.MIN_VALUE;
+        this.name = "";
+        this.address = new Address();
     }
 
     public Long getId() {
@@ -49,6 +52,9 @@ public class Person {
 
     @Override
     public boolean equals(Object o) {
+        if (id == null) {
+            if (((Person)o.id != null))
+        }
         if (!this.id.equals(((Person) o).id)) {
             return false; }
 
